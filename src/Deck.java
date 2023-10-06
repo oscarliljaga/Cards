@@ -15,9 +15,14 @@ public class Deck {
         }
     }
 
+    //Methods
     public Card pickCard() {
         Random myRandom = new Random();
         int pickedCard = myRandom.nextInt(cards.size());
         return (cards.remove(pickedCard));
+    }
+
+    public int getDeckSize() {
+        return this.cards.size();
     }
 }

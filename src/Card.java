@@ -1,11 +1,11 @@
 public class Card {
     //Attributes
-    public int value;
-    public CardColor color;
+    public final int value;
+    public final CardColor color;
 
     //Constructor
-    public Card(int myValue, CardColor myColor) {
-        value = myValue;
-        color = myColor;
+    public Card(int value, CardColor color) {
+        this.value = value;
+        this.color = color;
     }
 }
