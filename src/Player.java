@@ -2,9 +2,15 @@ import java.util.ArrayList;
 
 public class Player {
     //Attributes
+    public final String name;
     private ArrayList<Card> cards = new ArrayList<>();
     private int money;
     private boolean folded = false;
+
+    //Constructor
+    public Player(String name) {
+        this.name = name;
+    }
 
     //Methods
     public ArrayList<Card> getCards() {
@@ -24,6 +30,13 @@ public class Player {
         this.money += amount;
     }
 
+    /**
+     * Withdraws an amount of money from a Player, subtracting the amount from the Player object.
+     * If the specified amount isn't available for the Player, the whole available amount is instead withdrawn
+     *
+     * @param amount requested to withdraw
+     * @return amount withdrawn
+     */
     public int withdraw(int amount) {
         if (this.money - amount < 0) {
             int availableAmount = this.money;
