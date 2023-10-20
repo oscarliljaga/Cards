@@ -5,6 +5,7 @@ public class Player {
     public final String name;
     private ArrayList<Card> cards = new ArrayList<>();
     private int money;
+    private int bet;
     private boolean folded = false;
 
     //Constructor
@@ -17,6 +18,12 @@ public class Player {
         return cards;
     }
 
+    /**
+     * Removes a Card from the Player's cards
+     *
+     * @param card index of card to remove
+     * @return removed card
+     */
     public Card pickCard(Card card) {
         int cardIndex = cards.indexOf(card);
         return (cards.remove(cardIndex));
@@ -46,6 +53,19 @@ public class Player {
             this.money -= amount;
             return amount;
         }
+    }
+
+    public int getBet() {
+        return this.bet;
+    }
+
+    public int bet(int amount) {
+
+        return this.bet = withdraw(amount);
+    }
+
+    public void resetBet() {
+        this.bet = 0;
     }
 
     public boolean isFolded() {

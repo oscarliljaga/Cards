@@ -1,11 +1,10 @@
-public class Card {
-    //Attributes
-    public final int value;
-    public final CardColor color;
-
-    //Constructor
-    public Card(int value, CardColor color) {
-        this.value = value;
-        this.color = color;
-    }
+/**
+ * @param value 1-13
+ * @param color enum CardColor {
+ *              HEART,
+ *              SPADE,
+ *              DIAMOND,
+ *              CLUB
+ */
+public record Card(int value, CardColor color) {
 }
